@@ -396,3 +396,50 @@ QoS levels change **how hard MQTT tries to deliver** a message:
 Retained messages let the broker remember the **last known value** for a topic and give it immediately to new subscribers.
 
 This pattern is called **publish/subscribe**, and it’s very popular in IoT and distributed systems.
+
+## Windows Users: Mosquitto Running as a Background Service (Port Conflict)
+
+On Windows, the Mosquitto installer may automatically start the broker **as a background service**.  
+This means port **1883** is already in use when you try to run your own broker manually.
+
+If this happens, you’ll see:
+
+```
+Error: Only one usage of each socket address is normally permitted.
+```
+
+This means **port 1883 is already taken**.
+
+You can fix this using one of the following options.
+
+---
+
+Open **PowerShell as Administrator**:
+
+```powershell
+Get-Service mosquitto
+```
+
+If it shows `Running`, stop it:
+
+```powershell
+Stop-Service mosquitto
+```
+
+Or:
+
+```powershell
+net stop mosquitto
+```
+
+Prevent auto-start:
+
+```powershell
+Set-Service -Name mosquitto -StartupType Manual
+```
+
+Now you can safely start your own visible broker:
+
+```powershell
+& "C:\Program Files\mosquitto\mosquitto.exe" -c "PATH_TO_PROJECT\mosquitto\mosquitto.conf" -v
+```
