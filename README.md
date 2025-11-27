@@ -1,7 +1,7 @@
 # MQTT Tutorial on Windows 11  
 ## Eclipse Mosquitto Broker + Python venv + Paho MQTT
 
-This repo is a minimal, step-by-step tutorial for **Windows 11** that shows how to:
+This repo is a minimal, step-by-step tutorial for **Windows** that shows how to:
 
 1. Create and use a **Python virtual environment** (`venv`).
 2. Install and run the **Eclipse Mosquitto** MQTT broker.
@@ -45,8 +45,8 @@ You can either:
 - **Clone with Git**:
 
 ```bash
-git clone https://github.com/your-username/mqtt-windows-tutorial.git
-cd mqtt-windows-tutorial
+git clone https://github.com/captain-bender/mqtt-basics-windows-tutorial
+cd mqtt-basics-windows-tutorial
 ```
 
 or
@@ -145,7 +145,7 @@ The config file is in:
 ```text
 mosquitto/mosquitto.conf
 ```
-The provided one is a template. You can rename it and create a new one with just 2 lines of code as it is the follwoing:
+The provided one is a template. You can rename it and create a new one with just 2 lines of code as it is the following (example [mosquitto.conf](./mosquitto.conf)):
 It contains:
 
 ```conf
