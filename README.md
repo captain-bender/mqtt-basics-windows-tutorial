@@ -60,6 +60,7 @@ All the following commands assume you are inside the project folder.
 ## 3. Create and activate a virtual environment (venv)
 
 A virtual environment keeps the Python packages for this project isolated.
+Please call the following command inside the project's folder.
 
 ### 3.1. Create the venv
 
