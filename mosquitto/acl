@@ -1,0 +1,16 @@
+# Access Control List (ACL) example.
+#
+# Rules come in blocks. A "user" line starts the block for that user, and the
+# "topic" lines below it say what the user may do:
+#     topic read  <topic>    the user may subscribe to (receive) this topic
+#     topic write <topic>    the user may publish to this topic
+#     topic readwrite <topic>  both
+# Wildcards work as in subscriptions: + is one level, # is everything below.
+# Anything not allowed here is denied.
+#
+# Careful: "topic" lines written BEFORE the first "user" line apply only to
+# anonymous clients, not to logged-in users.
+
+# alice may publish and subscribe to everything under test/
+user alice
+topic readwrite test/#
