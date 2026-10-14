@@ -483,6 +483,10 @@ called `alice`. You will be asked to type her password twice:
 "C:\Program Files\mosquitto\mosquitto_passwd.exe" -c mosquitto\passwd alice
 ```
 
+```powershell
+& "C:\Program Files\mosquitto\mosquitto_passwd.exe" -c mosquitto\passwd alice
+```
+
 - `-c` **creates** the file, replacing any existing one. To add more users
   later, run the command again **without** `-c`.
 - Open `mosquitto\passwd`: the password is stored as a hash, not as plain text.
